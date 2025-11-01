@@ -13,7 +13,16 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        //first, the multiples should have a place where they are stored the best for this is to create the array, then there would have to be a loop that counts the numbers I need, then in the loop I should multiply the starting number by the index of the loop to get the multiple, then it should be saved in the array and in the last use return to give back if the result is correct
+
+        double[] multiplos = new double[length];
+
+        for (int i = 1; i <= length; i++)
+        {
+            multiplos[i - 1] = number * i;
+        }
+
+        return multiplos; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +38,11 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        //first we have to identify the elements that will move in the list, then we save them in a list that we will build with GetRange, then we have to remove those elements from the end of the original list using RemoveRange and then we put them at the beginning using InsertRange and so we can rotate the list to the right the amount of times indicated in amount
+
+        List<int> rule = data.GetRange(data.Count - amount, amount);
+        data.RemoveRange(data.Count - amount, amount);
+        data.InsertRange(0, rule);
     }
 }
