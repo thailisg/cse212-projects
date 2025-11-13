@@ -25,6 +25,20 @@
     private static int CountDuplicates(int[] data)
     {
         // Add code here.
-        return 0;
+        HashSet<int> values = new HashSet<int>();
+        int colisions = 0;
+
+        foreach (int value in data)
+        {
+            if (values.Contains(value))
+            {
+                colisions++;
+            }
+            else
+            {
+                values.Add(value);
+            }
+        }
+        return colisions;
     }
 }
